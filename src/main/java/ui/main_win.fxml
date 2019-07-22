@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory ?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="1024.0" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Main">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Help" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <VBox prefHeight="772.0" prefWidth="1024.0">
+         <children>
+            <ScrollPane prefHeight="578.0" prefWidth="1024.0">
+               <content>
+                  <TableView fx:id="tbl1" prefHeight="494.0" prefWidth="1000.0">
+                    <columns>
+                      <TableColumn fx:id="name" prefWidth="860.0" text="C1" >
+                      	      <cellValueFactory>
+                      			<PropertyValueFactory property="name" />
+                  			  </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn fx:id="marked" minWidth="0.0" prefWidth="100.0" text="C2" >
+                                            	      <cellValueFactory>
+                      			<PropertyValueFactory property="marked" />
+                  			  </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                  </TableView>
+               </content></ScrollPane>
+            <ProgressBar maxWidth="1.7976931348623157E308" prefHeight="116.0" prefWidth="0.0" progress="0.0" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Backup!" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="800.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btn1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#quit" prefWidth="100.0" text="Exit">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+         </children>
+      </VBox>
+  </children>
+</VBox>
