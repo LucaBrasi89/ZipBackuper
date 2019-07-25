@@ -2,9 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -13,15 +13,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="366.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox layoutX="14.0" layoutY="11.0" prefHeight="380.0" prefWidth="793.0">
          <children>
             <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="249.0" prefWidth="767.0">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="325.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="551.0" minWidth="10.0" prefWidth="456.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="621.0" minWidth="10.0" prefWidth="617.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="551.0" minWidth="10.0" prefWidth="150.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="116.0" minHeight="0.0" prefHeight="49.0" vgrow="SOMETIMES" />
@@ -32,49 +31,43 @@
                   <Insets left="20.0" />
                </VBox.margin>
                <children>
-                  <TextField fx:id="urlField" prefHeight="26.0" prefWidth="293.0" promptText="please, paste URL here..." />
-                  <Label text="BAC list URL" GridPane.columnIndex="1">
-                     <GridPane.margin>
-                        <Insets left="30.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Button fx:id="browseBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="111.0" text="Browse" GridPane.rowIndex="1" />
-                  <Label fx:id="filePath" text="Nothing output file is selected..." textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="30.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <GridPane prefHeight="124.0" prefWidth="318.0" GridPane.rowIndex="2">
+                  <Button fx:id="browseBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="111.0" text="Browse" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <GridPane prefHeight="82.0" prefWidth="617.0" GridPane.rowIndex="2">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.0" minWidth="10.0" prefWidth="78.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="257.0" minWidth="10.0" prefWidth="63.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="257.0" minWidth="10.0" prefWidth="194.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.0" minWidth="10.0" prefWidth="159.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="59.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="257.0" minWidth="10.0" prefWidth="55.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="335.0" />
                     </columnConstraints>
                     <rowConstraints>
-                      <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="106.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TextField fx:id="minRangeField" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="50.0" promptText="Min" GridPane.rowIndex="1">
+                        <TextField fx:id="minRangeField" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="50.0" promptText="Min" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
                         </TextField>
-                        <TextField fx:id="maxRangeField" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="50.0" promptText="Max" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <CheckBox fx:id="rangeChbx" mnemonicParsing="false" text="specify range" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <TextField fx:id="maxRangeField" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="50.0" promptText="Max" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="specPicRbtn" mnemonicParsing="false" text="Specific range" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="allPicRbtn" mnemonicParsing="false" selected="true" text="All pictures" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
+                  <Label fx:id="filePathLbl" prefHeight="16.0" prefWidth="612.0" text="Label" GridPane.rowIndex="1" />
+                  <Label fx:id="urlLbl" prefHeight="16.0" prefWidth="612.0" text="Label" />
                </children>
             </GridPane>
             <HBox prefHeight="34.0" prefWidth="793.0">
                <children>
-                  <ProgressBar fx:id="progressBar" prefHeight="20.0" prefWidth="700.0" progress="0.0" visible="false">
+                  <ProgressBar fx:id="progressBar" prefHeight="20.0" prefWidth="700.0" progress="0.0">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin>
                   </ProgressBar>
-                  <Label fx:id="percentages" text="0%" visible="false">
+                  <Label fx:id="percentages" text="0%">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin>
@@ -85,6 +78,7 @@
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="658.0" minWidth="10.0" prefWidth="580.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.0" minWidth="10.0" prefWidth="111.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.0" minWidth="10.0" prefWidth="111.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.0" minWidth="10.0" prefWidth="102.0" />
               </columnConstraints>
               <rowConstraints>
@@ -92,7 +86,8 @@
               </rowConstraints>
                <children>
                   <Button fx:id="startBtn" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="Start" GridPane.columnIndex="1" />
-                  <Button fx:id="quitBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="Quit" GridPane.columnIndex="2" />
+                  <Button fx:id="quitBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="Quit" GridPane.columnIndex="3" />
+                  <Button fx:id="cancelBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="Cancel" GridPane.columnIndex="2" />
                </children>
             </GridPane>
          </children>
